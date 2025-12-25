@@ -1,101 +1,49 @@
-import { promises as fs } from 'fs';
-import { join } from 'path';
 import type { AppsData, AppMetadata, AppReviews } from '~/types';
+import appsData from '~/data/apps.json';
 
-const DATA_DIR = join(process.cwd(), 'data');
-const REVIEWS_DIR = join(DATA_DIR, 'reviews');
-const METADATA_DIR = join(DATA_DIR, 'metadata');
+// In-memory cache for serverless environments (Vercel)
+const metadataCache = new Map<string, AppMetadata>();
+const reviewsCache = new Map<string, AppReviews>();
 
-// Ensure directories exist
-async function ensureDir(dir: string): Promise<void> {
-  try {
-    await fs.mkdir(dir, { recursive: true });
-  } catch {
-    // Directory exists
-  }
-}
-
-// Read apps configuration
+// Read apps configuration (from bundled JSON)
 export async function getApps(): Promise<AppsData> {
-  const filePath = join(DATA_DIR, 'apps.json');
-  const content = await fs.readFile(filePath, 'utf-8');
-  return JSON.parse(content);
+  return appsData as AppsData;
 }
 
-// Read app metadata
+// Read app metadata from cache
 export async function getMetadata(appId: string): Promise<AppMetadata | null> {
-  try {
-    const filePath = join(METADATA_DIR, `${appId}.json`);
-    const content = await fs.readFile(filePath, 'utf-8');
-    return JSON.parse(content);
-  } catch {
-    return null;
-  }
+  return metadataCache.get(appId) || null;
 }
 
-// Save app metadata
+// Save app metadata to cache
 export async function saveMetadata(appId: string, metadata: AppMetadata): Promise<void> {
-  await ensureDir(METADATA_DIR);
-  const filePath = join(METADATA_DIR, `${appId}.json`);
-  await fs.writeFile(filePath, JSON.stringify(metadata, null, 2));
+  metadataCache.set(appId, metadata);
 }
 
-// Read reviews for an app
+// Read reviews for an app from cache
 export async function getReviews(appId: string, store: 'ios' | 'android'): Promise<AppReviews | null> {
-  try {
-    const filePath = join(REVIEWS_DIR, `${appId}-${store}.json`);
-    const content = await fs.readFile(filePath, 'utf-8');
-    return JSON.parse(content);
-  } catch {
-    return null;
-  }
+  const key = `${appId}-${store}`;
+  return reviewsCache.get(key) || null;
 }
 
-// Save reviews for an app
+// Save reviews for an app to cache
 export async function saveReviews(appId: string, store: 'ios' | 'android', reviews: AppReviews): Promise<void> {
-  await ensureDir(REVIEWS_DIR);
-  const filePath = join(REVIEWS_DIR, `${appId}-${store}.json`);
-  await fs.writeFile(filePath, JSON.stringify(reviews, null, 2));
+  const key = `${appId}-${store}`;
+  reviewsCache.set(key, reviews);
 }
 
-// Get all reviews across all apps
+// Get all reviews across all apps from cache
 export async function getAllReviews(): Promise<AppReviews[]> {
-  await ensureDir(REVIEWS_DIR);
-
-  try {
-    const files = await fs.readdir(REVIEWS_DIR);
-    const reviewFiles = files.filter(f => f.endsWith('.json'));
-
-    const allReviews: AppReviews[] = [];
-    for (const file of reviewFiles) {
-      const content = await fs.readFile(join(REVIEWS_DIR, file), 'utf-8');
-      allReviews.push(JSON.parse(content));
-    }
-
-    return allReviews;
-  } catch {
-    return [];
-  }
+  return Array.from(reviewsCache.values());
 }
 
-// Get all metadata
+// Get all metadata from cache
 export async function getAllMetadata(): Promise<Map<string, AppMetadata>> {
-  await ensureDir(METADATA_DIR);
+  return new Map(metadataCache);
+}
 
-  const metadataMap = new Map<string, AppMetadata>();
-
-  try {
-    const files = await fs.readdir(METADATA_DIR);
-    const metadataFiles = files.filter(f => f.endsWith('.json'));
-
-    for (const file of metadataFiles) {
-      const appId = file.replace('.json', '');
-      const content = await fs.readFile(join(METADATA_DIR, file), 'utf-8');
-      metadataMap.set(appId, JSON.parse(content));
-    }
-  } catch {
-    // Directory doesn't exist yet
-  }
-
-  return metadataMap;
+// Clear all caches (useful for refresh)
+export function clearCache(): void {
+  metadataCache.clear();
+  reviewsCache.clear();
 }
