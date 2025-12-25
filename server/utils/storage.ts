@@ -32,9 +32,9 @@ export async function getMetadata(appId: string): Promise<AppMetadata | null> {
 export async function saveMetadata(appId: string, metadata: AppMetadata): Promise<void> {
   await sql`
     INSERT INTO app_metadata (app_id, data, updated_at)
-    VALUES (${appId}, ${JSON.stringify(metadata)}, NOW())
+    VALUES (${appId}, ${sql.json(metadata)}, NOW())
     ON CONFLICT (app_id)
-    DO UPDATE SET data = ${JSON.stringify(metadata)}, updated_at = NOW()
+    DO UPDATE SET data = ${sql.json(metadata)}, updated_at = NOW()
   `;
 }
 
@@ -50,9 +50,9 @@ export async function getReviews(appId: string, store: 'ios' | 'android'): Promi
 export async function saveReviews(appId: string, store: 'ios' | 'android', reviews: AppReviews): Promise<void> {
   await sql`
     INSERT INTO app_reviews (app_id, store, data, updated_at)
-    VALUES (${appId}, ${store}, ${JSON.stringify(reviews)}, NOW())
+    VALUES (${appId}, ${store}, ${sql.json(reviews)}, NOW())
     ON CONFLICT (app_id, store)
-    DO UPDATE SET data = ${JSON.stringify(reviews)}, updated_at = NOW()
+    DO UPDATE SET data = ${sql.json(reviews)}, updated_at = NOW()
   `;
 }
 

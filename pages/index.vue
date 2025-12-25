@@ -2,42 +2,7 @@
 import type { AppWithMetadata } from '~/types';
 import { meetsMinVersion } from '~/utils/version';
 
-const CACHE_KEY = 'tenfore_last_fetch';
-const CACHE_DURATION = 30 * 60 * 1000; // 30 minutes in milliseconds
-
-const { data: apps, pending, error, refresh } = await useFetch<AppWithMetadata[]>('/api/apps');
-
-const dataRefresh = useRefresh();
-
-// Check if cache is stale (older than 30 minutes)
-function isCacheStale(): boolean {
-  if (import.meta.server) return false; // Don't fetch on server
-  const lastFetch = localStorage.getItem(CACHE_KEY);
-  if (!lastFetch) return true;
-  return Date.now() - parseInt(lastFetch, 10) > CACHE_DURATION;
-}
-
-// Auto-fetch data if cache is stale
-onMounted(async () => {
-  if (isCacheStale()) {
-    await refreshAllData();
-  }
-});
-
-async function refreshAllData() {
-  await dataRefresh.execute(
-    async () => {
-      // Fetch metadata and reviews in parallel
-      await Promise.all([
-        $fetch('/api/metadata/fetch', { method: 'POST' }),
-        $fetch('/api/reviews/fetch', { method: 'POST' })
-      ]);
-      // Update cache timestamp
-      localStorage.setItem(CACHE_KEY, Date.now().toString());
-    },
-    () => refresh()
-  );
-}
+const { data: apps, pending, error } = await useFetch<AppWithMetadata[]>('/api/apps');
 
 // Filter apps: only show apps with version >= 6, put Crane first
 const filteredApps = computed(() => {
@@ -68,11 +33,8 @@ const filteredApps = computed(() => {
     </div>
 
     <!-- Loading state -->
-    <div v-if="pending || dataRefresh.loading.value" class="flex flex-col items-center justify-center py-12">
+    <div v-if="pending" class="flex items-center justify-center py-12">
       <BaseSpinner size="md" />
-      <p v-if="dataRefresh.loading.value" class="mt-4 text-gray-600">
-        Fetching latest data from App Store and Google Play...
-      </p>
     </div>
 
     <!-- Error state -->
@@ -88,7 +50,7 @@ const filteredApps = computed(() => {
 
       <!-- Empty state -->
       <div v-if="filteredApps.length === 0" class="text-center py-12 text-gray-500">
-        No apps available. Click "Refresh All" to fetch app data.
+        No apps available. Data is refreshed automatically every 6 hours.
       </div>
     </template>
   </div>
