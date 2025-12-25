@@ -1,8 +1,6 @@
 import { getApps, saveMetadata, saveReviews } from '~/server/utils/storage';
-import { fetchAppStoreInfo } from '~/server/utils/appStore';
-import { fetchGooglePlayInfo } from '~/server/utils/googlePlay';
-import { fetchAppStoreReviews } from '~/server/utils/appStore';
-import { fetchGooglePlayReviews } from '~/server/utils/googlePlay';
+import { fetchAppStoreMetadata, fetchAppStoreReviews } from '~/server/utils/appStore';
+import { fetchGooglePlayMetadata, fetchGooglePlayReviews } from '~/server/utils/googlePlay';
 import type { AppMetadata, AppReviews } from '~/types';
 
 export default defineEventHandler(async (event) => {
@@ -27,8 +25,8 @@ export default defineEventHandler(async (event) => {
     // Fetch metadata
     try {
       const [iosInfo, androidInfo] = await Promise.all([
-        fetchAppStoreInfo(app.appStoreId).catch(() => null),
-        fetchGooglePlayInfo(app.googlePlayId).catch(() => null)
+        fetchAppStoreMetadata(app.appStoreId).catch(() => null),
+        fetchGooglePlayMetadata(app.googlePlayId).catch(() => null)
       ]);
 
       const metadata: AppMetadata = {
