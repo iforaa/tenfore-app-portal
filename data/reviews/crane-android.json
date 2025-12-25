@@ -1,0 +1,49 @@
+{
+  "appId": "crane",
+  "store": "android",
+  "fetchedAt": "2025-12-25T21:35:09.867Z",
+  "reviews": [
+    {
+      "id": "387b8784-1010-4ff3-a47d-e119a6a55c33",
+      "userName": "Randy P.",
+      "userImage": "https://play-lh.googleusercontent.com/a/ACg8ocKcVPU3EbbtsAMna6HJT_HB6GnqeWLFA5TaciXpkpTvQ5wsCg=mo",
+      "date": "2025-04-04T00:42:49.754Z",
+      "score": 1,
+      "scoreText": "1",
+      "text": "App was fine until a few days ago. Now opening the app takes me to MCG golf, not tenfore crane.",
+      "replyDate": null,
+      "replyText": null,
+      "version": "6.0.20",
+      "thumbsUp": 0,
+      "url": "https://play.google.com/store/apps/details?id=golf.tenfore.crane&reviewId=387b8784-1010-4ff3-a47d-e119a6a55c33"
+    },
+    {
+      "id": "13ed5881-74f2-4a86-9cde-f0808656c313",
+      "userName": "Sebastian Barnes",
+      "userImage": "https://play-lh.googleusercontent.com/a-/ALV-UjV69nBc3nbJRLoMYrmjGsVdFksaqTnYPYylGmf-jiyur-rpc4PF",
+      "date": "2025-03-03T16:17:47.900Z",
+      "score": 1,
+      "scoreText": "1",
+      "text": "I am so disappointed that my Muni courses switched to this app. With the latest update I can't even login anymore through Google. But even when I could it was miserably clunky to attempt to book a tee time and even worse to try and add playing partners. This is coming from a tech savvy younger user too - the seniors I've seen out at the courses are even more hopelessly lost with this crapfest of an app",
+      "replyDate": null,
+      "replyText": null,
+      "version": "6.0.14",
+      "thumbsUp": 0,
+      "url": "https://play.google.com/store/apps/details?id=golf.tenfore.crane&reviewId=13ed5881-74f2-4a86-9cde-f0808656c313"
+    },
+    {
+      "id": "7649c80b-6bfc-4b5c-9729-c1cc0961959a",
+      "userName": "Jay",
+      "userImage": "https://play-lh.googleusercontent.com/a/ACg8ocKBgn0ZDtjaj0XNOnTrzAHFkNTxaexPvnV6MlKxlu_kcONFTQ=mo",
+      "date": "2024-05-24T01:32:25.105Z",
+      "score": 1,
+      "scoreText": "1",
+      "text": "Always crashing. Rarely works.",
+      "replyDate": null,
+      "replyText": null,
+      "version": null,
+      "thumbsUp": 0,
+      "url": "https://play.google.com/store/apps/details?id=golf.tenfore.crane&reviewId=7649c80b-6bfc-4b5c-9729-c1cc0961959a"
+    }
+  ]
+}

@@ -1,0 +1,108 @@
+{
+  "apps": [
+    {
+      "id": "crane",
+      "name": "TenFore Crane",
+      "appStoreId": "1644324260",
+      "googlePlayId": "golf.tenfore.crane",
+      "isWhitelabel": false,
+      "primaryColor": "#2C7C4D"
+    },
+    {
+      "id": "mcg",
+      "name": "MCG Golf",
+      "appStoreId": "6737781976",
+      "googlePlayId": "golf.tenfore.mcg",
+      "isWhitelabel": true,
+      "primaryColor": "#1B4D3E"
+    },
+    {
+      "id": "spirit",
+      "name": "Spirit Golf",
+      "appStoreId": "6478382065",
+      "googlePlayId": "golf.tenfore.spirt_golf",
+      "isWhitelabel": true,
+      "primaryColor": "#1B4D3E"
+    },
+    {
+      "id": "ranches",
+      "name": "The Ranches Golf",
+      "appStoreId": "6739818928",
+      "googlePlayId": "golf.tenfore.ranches",
+      "isWhitelabel": true,
+      "primaryColor": "#1B4D3E"
+    },
+    {
+      "id": "ridges",
+      "name": "Ridges Golf",
+      "appStoreId": "6739819315",
+      "googlePlayId": "golf.tenfore.ridges",
+      "isWhitelabel": true,
+      "primaryColor": "#1B4D3E"
+    },
+    {
+      "id": "siouxcreek",
+      "name": "Sioux Creek Golf",
+      "appStoreId": "6744904760",
+      "googlePlayId": "golf.tenfore.siouxcreek",
+      "isWhitelabel": true,
+      "primaryColor": "#1B4D3E"
+    },
+    {
+      "id": "carriagegreens",
+      "name": "Carriage Greens Golf",
+      "appStoreId": "6739879444",
+      "googlePlayId": "golf.tenfore.carriagegreens",
+      "isWhitelabel": true,
+      "primaryColor": "#1B4D3E"
+    },
+    {
+      "id": "oldhickory",
+      "name": "Old Hickory Golf Club WI",
+      "appStoreId": "6746600019",
+      "googlePlayId": "golf.tenfore.oldhickory",
+      "isWhitelabel": true,
+      "primaryColor": "#1B4D3E"
+    },
+    {
+      "id": "g1611c",
+      "name": "1611 Golf Club",
+      "appStoreId": "6746733071",
+      "googlePlayId": "golf.tenfore.g1611c",
+      "isWhitelabel": true,
+      "primaryColor": "#1B4D3E"
+    },
+    {
+      "id": "cedarrapids",
+      "name": "Cedar Rapids Golf",
+      "appStoreId": "6748029868",
+      "googlePlayId": "golf.tenfore.cedarrapids",
+      "isWhitelabel": true,
+      "primaryColor": "#1B4D3E"
+    },
+    {
+      "id": "baycity",
+      "name": "Bay City CC",
+      "appStoreId": "6748414649",
+      "googlePlayId": "golf.tenfore.baycity",
+      "isWhitelabel": true,
+      "primaryColor": "#1B4D3E"
+    },
+    {
+      "id": "cds",
+      "name": "Costa del Sol Golf Club",
+      "appStoreId": "6748414653",
+      "googlePlayId": "golf.tenfore.cds",
+      "isWhitelabel": true,
+      "primaryColor": "#1B4D3E"
+    },
+    {
+      "id": "memphis",
+      "name": "Memphis Golf",
+      "appStoreId": "6749717086",
+      "googlePlayId": "golf.tenfore.memphis",
+      "isWhitelabel": true,
+      "primaryColor": "#1B4D3E"
+    }
+  ]
+}

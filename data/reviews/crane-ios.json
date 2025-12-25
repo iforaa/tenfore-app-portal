@@ -1,0 +1,17 @@
+{
+  "appId": "crane",
+  "store": "ios",
+  "fetchedAt": "2025-12-25T21:35:09.639Z",
+  "reviews": [
+    {
+      "id": "10881190141",
+      "userName": "jonusa123",
+      "userImage": "https://itunes.apple.com/us/reviews/id36921562",
+      "score": 5,
+      "title": "Great Tee Time Booking App",
+      "text": "Easy to use and find your local course that uses TenFore Golf.",
+      "version": "2.0.9",
+      "url": "https://itunes.apple.com/us/review?id=1644324260&type=Purple%20Software"
+    }
+  ]
+}

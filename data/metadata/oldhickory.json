@@ -1,0 +1,68 @@
+{
+  "appId": "oldhickory",
+  "fetchedAt": "2025-12-25T21:35:10.856Z",
+  "android": {
+    "title": "Old Hickory Golf Club",
+    "description": "Established 1920, Old Hickory Golf Club is one of the oldest and most respected golf courses in Wisconsin. Every aspect of the facility is open to the public and we look forward to providing you and your playing partners a round to remember. One of the only courses to host the Wisconsin State Amateur Championship twice and proud host of USGA United States Amateur Championship Local Qualifying, the course has everything you want, no matter your skill level.\n\nOld Hickory’s championship-style course features more than 30 fairway and green side bunkers on a nearly 200-acre mature, rolling landscape. Despite the vast property, you’ll find yourself in some tight placements along our tree-lined fairways. Old Hickory also boasts some of the best greens in the state that will surely test your skills.\n\nOur family invites you to spend a day with us!",
+    "descriptionHTML": "Established 1920, Old Hickory Golf Club is one of the oldest and most respected golf courses in Wisconsin. Every aspect of the facility is open to the public and we look forward to providing you and your playing partners a round to remember. One of the only courses to host the Wisconsin State Amateur Championship twice and proud host of USGA United States Amateur Championship Local Qualifying, the course has everything you want, no matter your skill level.<br><br>Old Hickory’s championship-style course features more than 30 fairway and green side bunkers on a nearly 200-acre mature, rolling landscape. Despite the vast property, you’ll find yourself in some tight placements along our tree-lined fairways. Old Hickory also boasts some of the best greens in the state that will surely test your skills.<br><br>Our family invites you to spend a day with us!",
+    "summary": "Tee time booking for Old Hickory Golf Club in Wisconsin",
+    "installs": "5+",
+    "minInstalls": 5,
+    "maxInstalls": 5,
+    "histogram": {
+      "1": 0,
+      "2": 0,
+      "3": 0,
+      "4": 0,
+      "5": 0
+    },
+    "price": 0,
+    "free": true,
+    "currency": "USD",
+    "priceText": "Free",
+    "available": true,
+    "offersIAP": false,
+    "androidVersion": "6.0",
+    "androidVersionText": "6.0",
+    "androidMaxVersion": "VARY",
+    "developer": "SchuleDev LLC",
+    "developerId": "SchuleDev+LLC",
+    "developerEmail": "info@oldhickorygolfclub.com",
+    "developerWebsite": "https://www.oldhickorygolfclub.com/",
+    "developerLegalName": "Schuledev LLC",
+    "developerLegalEmail": "support@tenfore.golf",
+    "developerLegalAddress": "31215 Beck Rd, Bulverde, TX 78163, United States",
+    "developerLegalPhoneNumber": "+1 210-505-9779",
+    "privacyPolicy": "https://handheldgolf.com/oldhickory/privacy/T2xkIEhpY2tvcnkgR29sZiBDbHViIFdJ",
+    "developerInternalID": "SchuleDev+LLC",
+    "genre": "Sports",
+    "genreId": "SPORTS",
+    "categories": [
+      {
+        "name": "Sports",
+        "id": "SPORTS"
+      }
+    ],
+    "icon": "https://play-lh.googleusercontent.com/hLJBoyaI2b6G-ngWCbRoiKhTxLfs4CZFgEVjNjcV6fbC-BBHy2aoBaGRSingMZI5LA",
+    "headerImage": "https://play-lh.googleusercontent.com/oPgTLFXC-a6pjXtajqoXX1Qny4bhBLXyswZ4vHe2HclVqawh9rdLyNKhj-Q1_qSy3w",
+    "screenshots": [
+      "https://play-lh.googleusercontent.com/j6YcaY8Dk1txsNg6W5TNvSaON080kf1uTw1ruIG_TG2-CCZza9SaJ6thYjPYz1il",
+      "https://play-lh.googleusercontent.com/BjwyFSuR0k3k-6YYvR6QbjL3PnJFeuPqH9qX_EVl6HLfJttFRI9J5-8RdCZbbM48tuSK",
+      "https://play-lh.googleusercontent.com/Yqa7QFF8psd1clFiiRIvkIZd5EHgLAAYF_j-vJG0OsWLz17xEyXNtxBdRRPTDD2UTIo",
+      "https://play-lh.googleusercontent.com/rN4CPOTIrZDZvWmCisVyKnF4IEANPfJDiu9MjMtNWlNv_6Uo1211m9NEqZMYqTQ605S4",
+      "https://play-lh.googleusercontent.com/AyKi-7xU7-oOv6PLkRsSUm_cPiu3m81QBcVC0X1Rhlt9GN70jFouNmi5TPtCLPw5pA"
+    ],
+    "contentRating": "Everyone",
+    "adSupported": false,
+    "released": "May 30, 2025",
+    "updated": 1748898638000,
+    "version": "6.1.4",
+    "recentChanges": "bug fixes",
+    "comments": [],
+    "preregister": false,
+    "earlyAccessEnabled": false,
+    "isAvailableInPlayPass": false,
+    "appId": "golf.tenfore.oldhickory",
+    "url": "https://play.google.com/store/apps/details?id=golf.tenfore.oldhickory&hl=en&gl=us"
+  }
+}
